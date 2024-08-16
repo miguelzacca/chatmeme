@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+:root {
+  --bg-color: #eee;
+  --sub-color: #444;
+  --light-black: #888;
+}
+
+html {
+  font-size: 10px;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+body {
+  height: 100lvh;
+  display: grid;
+  grid-template-rows: 5rem auto 7.5rem;
+  grid-template-columns: 30lvw auto;
+  grid-template-areas:
+    'aside header'
+    'aside main'
+    'aside footer';
+  background-color: var(--sub-color);
+  padding-right: 2rem;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  background-color: var(--sub-color);
+  grid-area: header;
+}
+
+aside {
+  grid-area: aside;
+  background-image: url(/images/monkey.png);
+  background-size: 90% 25rem;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: var(--bg-color);
+}
+
+footer,
+header {
+  border-inline: 0.1rem solid var(--light-black);
+}
+
+main {
+  background-color: var(--bg-color);
+  box-shadow: inset 0 0 0.8rem #00000070;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2rem 5rem;
+  overflow: auto;
+  gap: 1rem;
+  grid-area: main;
+}
+
+main p {
+  font-size: 1.7rem;
+  color: var(--bg-color);
+  background-color: var(--light-black);
+  width: max-content;
+  max-width: 50%;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+main p span {
+  color: #ddd;
+  font-size: 1.2rem;
+  margin-left: 0.2rem;
+}
+
+main p.you {
+  margin-left: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sub-color);
+  gap: 2rem;
+  grid-area: footer;
+}
+
+footer input {
+  width: 50rem;
+  height: 4rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.7rem;
+  color: var(--sub-color);
+  padding: 0 2rem;
+  background-color: var(--bg-color);
+}
+
+footer button {
+  font-size: 1.7rem;
+  color: var(--sub-color);
+  height: 4rem;
+  background-color: var(--bg-color);
+  padding: 0 2rem;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+footer button:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+
+footer button:active {
+  transition: all 0.1s;
+  scale: 0.9;
+  cursor: wait;
+}

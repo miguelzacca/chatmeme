@@ -1,0 +1,8 @@
+{
+  "watch": [
+    "src",
+    "public"
+  ],
+  "ext": "ts,json,css,ejs",
+  "exec": "swc src --config-file .swcrc -d dist && node dist/src/index.js"
+}
